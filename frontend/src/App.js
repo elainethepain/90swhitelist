@@ -3,6 +3,7 @@ import { bn } from "fuels";
 import { useWallet, useContract } from "fuels-react";
 import { useState } from "react";
 import DisplaySingleEvent from "./DisplaySingleEvent";
+import { Heading, Center, Text, Box } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -226,151 +227,22 @@ function App() {
     abi: whitelistAbi,
   });
 
-  async function createList(e) {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      console.log("creating whitelist");
-      const requiredDeposit = bn.parseUnits(newListDeposit.toString());
-      console.log("requiredDeposit", requiredDeposit.toString());
-      const { value } = await contract.functions
-        .create_list(newListMax, requiredDeposit, newListName)
-        .txParams({ gasPrice: 1 })
-        .call();
 
-      console.log("return of create list", value);
-      console.log(
-        "deposit value",
-        bn.parseUnits(newListDeposit.toString()).toString()
-      );
-      console.log("list name", value.name);
-      console.log("list capacity", value.max_capacity.toString());
-      console.log("listID", value.unique_id.toString());
-      setNewListID(value.unique_id.toString());
-      setListCreation(true);
-      alert("List created");
-    } catch (e) {
-      alert(e.message);
-      console.log(e);
-    } finally {
-      setLoading(false);
-    }
-  }
   return (
-    <div className="App">
-      <div className="card">
-        {wallet.isConnected ? (
-          <button onClick={wallet.disconnect}>Disconnect</button>
-        ) : (
-          <button onClick={wallet.connect}>Connect</button>
-        )}
-        <p>
-          Edit <code>src/App.tsx</code>
-        </p>
-        <form
-          onSubmit={createList}
-          className="space-y-8 divide-y divide-gray-200"
-        >
-          <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
-            <div className="space-y-6 sm:space-y-5">
-              <div>
-                <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                  Create events, manage ticket sales, and connect with your
-                  community.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-6 pt-8 sm:space-y-5 sm:pt-10">
-              <p className="text-lg font-bold">Create a New Event</p>
-              <div className="space-y-6 sm:space-y-5">
-                <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label
-                    htmlFor="first-name"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
-                  >
-                    Event name
-                  </label>
-                  <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <input
-                      type="text"
-                      name="event-name"
-                      id="event-name"
-                      value={newListName}
-                      onChange={(e) => setNewListName(e.target.value)}
-                      placeholder="Enter event name"
-                      className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:max-w-xs sm:text-sm"
-                    />
-                  </div>
-                </div>
+    <>
+      <Center className="container" h='100px' color='white'>
+        <Box>
+          <Heading noOfLines={1}>
+            Browse 90s Gifs
+          </Heading>
+          <Text>
+            The Best Gifs Powered By AI.
+          </Text>
+        </Box>
+      </Center>
+    </>
 
-                <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label
-                    htmlFor="last-name"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
-                  >
-                    Max Capacity
-                  </label>
-                  <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <input
-                      value={newListMax}
-                      onChange={(e) => setNewListMax(+e.target.value)}
-                      type="number"
-                      name="last-name"
-                      id="last-name"
-                      autoComplete="family-name"
-                      className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:max-w-xs sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
-                  >
-                    Ticket Price
-                  </label>
-                  <div className="mt-1 sm:col-span-2 sm:mt-0">
-                    <input
-                      value={newListDeposit}
-                      onChange={(e) => setNewListDeposit(+e.target.value)}
-                      id="email"
-                      name="email"
-                      type="number"
-                      autoComplete="email"
-                      className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="pt-5">
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                className="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Create
-              </button>
-            </div>
-          </div>
-        </form>
-        <div className="results">
-          <div className="card rounded-sm mt-4">
-            {listCreation && newListID !== "0" && (
-              <>
-                <DisplaySingleEvent
-                  listName={newListName}
-                  deposit={newListDeposit}
-                  listId={newListID}
-                  numOfRsvps={newListRSVP}
-                ></DisplaySingleEvent>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+
   );
 }
 
