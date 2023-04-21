@@ -230,16 +230,18 @@ function App() {
 
   return (
     <>
-      <Center className="container" h='100px' color='white'>
+      <Center className="container" color='white'>
         <Box>
-          <Heading noOfLines={1}>
+          {/* <Heading noOfLines={1}>
             Browse 90s Gifs
           </Heading>
           <Text>
             The Best Gifs Powered By AI.
-          </Text>
+          </Text> */}
         </Box>
       </Center>
+      <Center className="container_two"></Center>
+      <Center className="container_three"></Center>
     </>
 
 
