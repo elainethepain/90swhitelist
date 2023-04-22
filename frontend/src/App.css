@@ -41,6 +41,22 @@ body {
     animation: 200s linear 0s infinite normal none running animation-1q6vx2b;
 }
 
+.header_text {
+  position: relative;
+  padding-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.first_header {
+  margin-bottom: 0.7rem;
+}
+
+.signup_button {
+  margin-top: 1.2rem;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

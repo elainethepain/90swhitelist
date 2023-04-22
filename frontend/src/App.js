@@ -1,12 +1,13 @@
 import logo from "./logo.svg";
 import { bn } from "fuels";
 import { useWallet, useContract } from "fuels-react";
-import { useState } from "react";
+import { useId, useState } from "react";
 import DisplaySingleEvent from "./DisplaySingleEvent";
-import { Heading, Center, Text, Box } from '@chakra-ui/react';
+import { Heading, Center, Button } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
+
   const wallet = useWallet();
   // const block = useBlock({ idOrHeight: 900000 });
   const whitelistAbi = {
@@ -230,18 +231,20 @@ function App() {
 
   return (
     <>
-      <Center className="container" color='white'>
-        <Box>
-          {/* <Heading noOfLines={1}>
-            Browse 90s Gifs
-          </Heading>
-          <Text>
-            The Best Gifs Powered By AI.
-          </Text> */}
-        </Box>
-      </Center>
+      <Center className="container" color='white'></Center>
       <Center className="container_two"></Center>
       <Center className="container_three"></Center>
+      <Center className="header_text">
+        <Heading className="first_header" size='2xl'>
+          Browse 90s Gifs
+        </Heading>
+        <Heading size='lg'>
+          A retro search engine powered by AI.
+        </Heading>
+        <Button className="signup_button" colorScheme='purple' size='md'>
+          Signup for Beta
+        </Button>
+      </Center>
     </>
 
 
