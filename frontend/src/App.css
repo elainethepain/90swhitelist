@@ -41,6 +41,16 @@ body {
     animation: 200s linear 0s infinite normal none running animation-1q6vx2b;
 }
 
+.connect_button_container {
+  position: relative;
+  padding-top: 3rem;
+}
+
+.fuel_network {
+  background: #25D0AB !important;
+}
+
+
 .header_text {
   position: relative;
   padding-top: 12rem;

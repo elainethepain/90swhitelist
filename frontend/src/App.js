@@ -234,6 +234,16 @@ function App() {
       <Center className="container" color='white'></Center>
       <Center className="container_two"></Center>
       <Center className="container_three"></Center>
+      <Center className="connect_button_container">
+
+        {wallet.isConnected ? (
+          <Button className="fuel_network" size='md' onClick={wallet.disconnect}>Disconnect</Button>
+
+        ) : (
+          <Button className="fuel_network" size='md' onClick={wallet.connect}>Connect to Fuel Network</Button>
+        )}
+
+      </Center>
       <Center className="header_text">
         <Heading className="first_header" size='2xl'>
           Browse 90s Gifs
