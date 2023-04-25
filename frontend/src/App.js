@@ -215,12 +215,13 @@ function App() {
     configurables: [],
   };
   const [loading, setLoading] = useState(false);
-  const [newListName, setNewListName] = useState("");
-  const [newListMax, setNewListMax] = useState(0);
-  const [newListDeposit, setNewListDeposit] = useState(0);
-  const [newListID, setNewListID] = useState("");
+  const [listName, setListName] = useState("");
+  const [maxCap, setMaxCap] = useState(0);
   const [listCreation, setListCreation] = useState(false);
-  const [newListRSVP, setnewListRSVP] = useState(0);
+  const [rsvpConfirmed, setRSVPConfirmed] = useState(false);
+  const [numOfRSVPs, setNumOfRSVPs] = useState(0);
+  const [listId, setListId] = useState(0);
+  const [listDeposit, setListDeposit] = useState(0);
 
   const contract = useContract({
     address:
@@ -228,6 +229,32 @@ function App() {
     abi: whitelistAbi,
   });
 
+  async function joinWhitelist() {
+    setLoading(true);
+    try {
+      console.log("RSVPing to list");
+      // Create a transaction to RSVP to the whitelist
+      const { value: listRSVP, transactionId } = await contract.functions
+        .rsvp(listId)
+        .txParams({ gasPrice: 1, variableOutputs: 1 })
+        .call();
+
+      console.log(
+        "Transaction created",
+        transactionId,
+        `https://fuellabs.github.io/block-explorer-v2/transaction/${transactionId}`
+      );
+      console.log("# of RSVPs", listRSVP.num_of_rsvps.toString());
+      setNumOfRSVPs(listRSVP.num_of_rsvps.toNumber());
+      setRSVPConfirmed(true);
+      alert("rsvp successful");
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <>
@@ -251,7 +278,7 @@ function App() {
         <Heading size='lg'>
           A retro search engine powered by AI.
         </Heading>
-        <Button className="signup_button" colorScheme='purple' size='md'>
+        <Button onClick={joinWhitelist} className="signup_button" colorScheme='purple' size='md'>
           Signup for Beta
         </Button>
       </Center>
