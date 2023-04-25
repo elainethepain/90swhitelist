@@ -44,6 +44,7 @@ body {
 .connect_button_container {
   position: relative;
   padding-top: 3rem;
+  margin-right: 3em;
 }
 
 .fuel_network {

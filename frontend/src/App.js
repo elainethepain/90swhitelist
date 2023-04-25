@@ -3,7 +3,7 @@ import { bn } from "fuels";
 import { useWallet, useContract } from "fuels-react";
 import { useId, useState } from "react";
 import DisplaySingleEvent from "./DisplaySingleEvent";
-import { Heading, Center, Button } from '@chakra-ui/react';
+import { Heading, Center, Button, Flex, Spacer } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -261,8 +261,8 @@ function App() {
       <Center className="container" color='white'></Center>
       <Center className="container_two"></Center>
       <Center className="container_three"></Center>
-      <Center className="connect_button_container">
-
+      <Flex className="connect_button_container">
+        <Spacer />
         {wallet.isConnected ? (
           <Button className="fuel_network" size='md' onClick={wallet.disconnect}>Disconnect</Button>
 
@@ -270,7 +270,7 @@ function App() {
           <Button className="fuel_network" size='md' onClick={wallet.connect}>Connect to Fuel Network</Button>
         )}
 
-      </Center>
+      </Flex>
       <Center className="header_text">
         <Heading className="first_header" size='2xl'>
           Browse 90s Gifs
