@@ -3,7 +3,7 @@ import { bn } from "fuels";
 import { useWallet, useContract } from "fuels-react";
 import { useId, useState } from "react";
 import DisplaySingleEvent from "./DisplaySingleEvent";
-import { Heading, Center, Button, Flex, Spacer } from '@chakra-ui/react';
+import { Heading, Center, Button, Flex, Spacer, Box, Image } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -271,6 +271,11 @@ function App() {
         )}
 
       </Flex>
+      <Center>
+        <Box>
+          <Image src='https://64.media.tumblr.com/d0055df6c6dd31e331078a7f765a3b4b/tumblr_nmv1cg2lTg1qchtw3o1_400.gifv' alt='Dan Abramov' />
+        </Box>
+      </Center>
       <Center className="header_text">
         <Heading className="first_header" size='2xl'>
           Browse 90s Gifs

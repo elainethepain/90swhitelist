@@ -54,7 +54,7 @@ body {
 
 .header_text {
   position: relative;
-  padding-top: 12rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   color: #fff;
