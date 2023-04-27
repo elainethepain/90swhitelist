@@ -14,7 +14,7 @@ body {
   position: fixed;
   display: block;
   z-index: -2;
-  background: url(stars.png) center top repeat rgb(0, 0, 0);
+  background: url(./images/stars.png) center top repeat rgb(0, 0, 0);
   width: 100vw;
   min-height: 100vh;
 }
@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: url(blob.png) center top repeat transparent;
+  background: url(./images/blob.png) center top repeat transparent;
   animation: 200s linear 0s infinite normal none running animation-1hmylq;
 }
 
@@ -37,7 +37,7 @@ body {
   width: 100%;
     height: 100%;
     z-index: 0;
-    background: url(clouds.png) center top repeat transparent;
+    background: url(./images/clouds.png) center top repeat transparent;
     animation: 200s linear 0s infinite normal none running animation-1q6vx2b;
 }
 
@@ -49,6 +49,10 @@ body {
 
 .fuel_network {
   background: #25D0AB !important;
+}
+
+.gif_header {
+  margin-top: 2rem;
 }
 
 
