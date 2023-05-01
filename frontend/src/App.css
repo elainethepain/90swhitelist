@@ -42,7 +42,7 @@ body {
 }
 
 .connect_button_container {
-  padding-top: 3rem;
+  padding-top: 2rem;
   margin-right: 3em;
 }
 
@@ -52,12 +52,17 @@ body {
 
 .stack_container {
   position: relative;
-  padding: 3rem 0 0 0 ;
+  padding: 6rem 0 0 0 ;
 }
 
 .gif_header {
   padding-left: 3rem;
+  filter: drop-shadow(rgb(35, 37, 67) 0px -5mm 10mm);
+}
 
+.heading_stack_container {
+  align-items: center;
+  justify-content: center;
 }
 
 .second_header {
@@ -65,14 +70,14 @@ body {
 }
 
 .first_header {
-  margin-bottom: 0.2rem;
   color: #fff;
 }
 
+
 .signup_button {
-  padding-top: 1rem;
-  width: 20%;
+  margin-top: 1rem !important;
 }
+
 
 .App-logo {
   height: 40vmin;

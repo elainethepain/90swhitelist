@@ -68,9 +68,9 @@ function App() {
       </Flex>
       <Center>
         <Stack className="stack_container" direction='row'>
-          <Stack direction="column">
-            <Heading className="first_header" size='xl'>
-              Browse the Best Collection of 90s Gifs Ever.
+          <Stack className="heading_stack_container" direction="column">
+            <Heading className="first_header" size='2xl'>
+              The Best Collection of 90s Gifs Ever.
             </Heading>
             <Heading className="second_header" size='lg'>
               A retro search engine powered by AI.
