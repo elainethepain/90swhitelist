@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import { useWallet, useContract } from "fuels-react";
 import { useState } from "react";
 import { whitelistAbi } from "./contracts/whitelistabi";
-import { Heading, Center, Button, Flex, Spacer, Box, Image } from '@chakra-ui/react';
+import { Heading, Center, Button, Flex, Spacer, Box, Image, Stack, HStack } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -66,22 +66,25 @@ function App() {
         )}
 
       </Flex>
-      <Center className="gif_header">
-        <Box>
-          <Image src='https://64.media.tumblr.com/d0055df6c6dd31e331078a7f765a3b4b/tumblr_nmv1cg2lTg1qchtw3o1_400.gifv' alt='Dan Abramov' />
-        </Box>
+      <Center>
+        <Stack className="stack_container" direction='row'>
+          <Stack direction="column">
+            <Heading className="first_header" size='xl'>
+              Browse the Best Collection of 90s Gifs Ever.
+            </Heading>
+            <Heading className="second_header" size='lg'>
+              A retro search engine powered by AI.
+            </Heading>
+            <Button onClick={joinWhitelist} className="signup_button" colorScheme='purple' size='md'>
+              Signup for Beta
+            </Button>
+          </Stack>
+          <Box className="gif_header">
+            <Image src='https://64.media.tumblr.com/d0055df6c6dd31e331078a7f765a3b4b/tumblr_nmv1cg2lTg1qchtw3o1_400.gifv' alt='Dan Abramov' />
+          </Box>
+        </Stack>
       </Center>
-      <Center className="header_text">
-        <Heading className="first_header" size='2xl'>
-          Browse 90s Gifs
-        </Heading>
-        <Heading size='lg'>
-          A retro search engine powered by AI.
-        </Heading>
-        <Button onClick={joinWhitelist} className="signup_button" colorScheme='purple' size='md'>
-          Signup for Beta
-        </Button>
-      </Center>
+
     </>
 
 
