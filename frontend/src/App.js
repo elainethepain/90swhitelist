@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import { useWallet, useContract } from "fuels-react";
 import { useState } from "react";
 import { whitelistAbi } from "./contracts/whitelistabi";
-import { Heading, Center, Button, Flex, Spacer, Box, Image, Stack, HStack } from '@chakra-ui/react';
+import { Heading, Center, Button, Flex, Spacer, Box, Image, Stack, Divider } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -66,6 +66,7 @@ function App() {
         )}
 
       </Flex>
+      <hr class="divider" />
       <Center>
         <Stack className="stack_container" direction='row'>
           <Stack className="heading_stack_container" direction="column">

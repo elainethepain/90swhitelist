@@ -50,6 +50,13 @@ body {
   background: #25D0AB !important;
 }
 
+.divider {
+  width: 96% !important;
+  margin: 0 auto;
+  border: 0 solid  #e5e5e5;
+}
+
+
 .stack_container {
   position: relative;
   padding: 6rem 0 0 0 ;
