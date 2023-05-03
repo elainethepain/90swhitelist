@@ -41,6 +41,30 @@ body {
     animation: 200s linear 0s infinite normal none running animation-1q6vx2b;
 }
 
+.word_logo {
+  background-image: linear-gradient(64deg, rgb(117, 195, 255) 0%,
+   rgb(255, 92, 154) 100%);
+   background-size: 100%;
+   background-repeat: repeat;
+   font-size: 2rem;
+   font-family: "Inter-Bold", "Inter", sans-serif;
+   font-weight: 700;
+   line-height: 2.2rem;
+   padding-left: 3rem;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   -moz-background-clip: text;
+   -moz-text-fill-color: transparent;
+}
+
+.word_logo[data-text-fill] {
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: max(0em, calc(calc(1.3em - var(--framer-line-height, 1.3em)) / 2));
+  margin: min(0em, calc(calc(1.3em - var(--framer-line-height, 1.3em)) / -2));
+}
+
 .logo {
   width: 155px;
   height: 101px;
