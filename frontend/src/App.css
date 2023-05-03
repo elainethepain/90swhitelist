@@ -41,9 +41,18 @@ body {
     animation: 200s linear 0s infinite normal none running animation-1q6vx2b;
 }
 
-.connect_button_container {
-  padding-top: 2rem;
+.logo {
+  width: 155px;
+  height: 101px;
+  background: url(./images/app_logo.png);
+  background-size: 100% 100%;
+  margin-left: 5rem;
+}
+
+.nav_container {
+  padding-top: 0.8rem;
   margin-right: 3em;
+  align-items: center;
 }
 
 .fuel_network {
@@ -53,13 +62,15 @@ body {
 .divider {
   width: 96% !important;
   margin: 0 auto;
-  border: 0 solid  #e5e5e5;
+  margin-top: 0.8rem;
+  border: 0 solid #e5e5e5;
+  opacity: 0.2 !important;
 }
-
 
 .stack_container {
   position: relative;
   padding: 6rem 0 0 0 ;
+  margin: 0 2rem 0 2rem;
 }
 
 .gif_header {
@@ -80,11 +91,9 @@ body {
   color: #fff;
 }
 
-
 .signup_button {
   margin-top: 1rem !important;
 }
-
 
 .App-logo {
   height: 40vmin;

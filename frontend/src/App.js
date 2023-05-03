@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import { useWallet, useContract } from "fuels-react";
 import { useState } from "react";
 import { whitelistAbi } from "./contracts/whitelistabi";
-import { Heading, Center, Button, Flex, Spacer, Box, Image, Stack, Divider } from '@chakra-ui/react';
+import { Heading, Center, Button, Flex, Spacer, Box, Image, Stack, Divider, Badge } from '@chakra-ui/react';
 import "./App.css";
 
 function App() {
@@ -11,12 +11,10 @@ function App() {
 
   const [loading, setLoading] = useState(false);
   const [listName, setListName] = useState("");
-  const [maxCap, setMaxCap] = useState(0);
-  const [listCreation, setListCreation] = useState(false);
   const [rsvpConfirmed, setRSVPConfirmed] = useState(false);
   const [numOfRSVPs, setNumOfRSVPs] = useState(0);
   const [listId, setListId] = useState(0);
-  const [listDeposit, setListDeposit] = useState(0);
+
 
   const contract = useContract({
     address:
@@ -56,7 +54,8 @@ function App() {
       <Center className="container" color='white'></Center>
       <Center className="container_two"></Center>
       <Center className="container_three"></Center>
-      <Flex className="connect_button_container">
+      <Flex className="nav_container">
+        <div class="logo"></div>
         <Spacer />
         {wallet.isConnected ? (
           <Button className="fuel_network" size='md' onClick={wallet.disconnect}>Disconnect</Button>
@@ -66,10 +65,13 @@ function App() {
         )}
 
       </Flex>
-      <hr class="divider" />
+      <Divider colorScheme="gray" className="divider" />
       <Center>
         <Stack className="stack_container" direction='row'>
           <Stack className="heading_stack_container" direction="column">
+            <Badge variant='outline' fontSize="1em" mb="2" colorScheme='pink'>
+              Coming Soon in 2023
+            </Badge>
             <Heading className="first_header" size='2xl'>
               The Best Collection of 90s Gifs Ever.
             </Heading>
