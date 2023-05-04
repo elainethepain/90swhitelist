@@ -84,6 +84,9 @@ function App() {
             <Button onClick={joinWhitelist} className="signup_button" colorScheme='purple' size='md'>
               Signup for Beta
             </Button>
+            <Box className="gif_header_2">
+              <Image src='https://64.media.tumblr.com/d0055df6c6dd31e331078a7f765a3b4b/tumblr_nmv1cg2lTg1qchtw3o1_400.gifv' alt='Dan Abramov' />
+            </Box>
           </Stack>
           <Box className="gif_header">
             <Image src='https://64.media.tumblr.com/d0055df6c6dd31e331078a7f765a3b4b/tumblr_nmv1cg2lTg1qchtw3o1_400.gifv' alt='Dan Abramov' />
