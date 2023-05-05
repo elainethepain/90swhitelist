@@ -75,7 +75,7 @@ function App() {
             <Badge variant='outline' fontSize="1em" mb="2" colorScheme='pink'>
               Coming Soon in 2023
             </Badge>
-            <Heading className="first_header" size='2xl'>
+            <Heading className="first_header" size='xl'>
               The Best Collection of 90s Gifs Ever.
             </Heading>
             <Heading className="second_header" size='lg'>
